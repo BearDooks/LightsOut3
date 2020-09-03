@@ -4,7 +4,7 @@
 [ext_resource path="res://menus/main_menu/options_gear.png" type="Texture" id=2]
 [ext_resource path="res://images/menu_background.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PermanentMarker_72.tres" type="DynamicFont" id=4]
-[ext_resource path="res://images/icon.png" type="Texture" id=5]
+[ext_resource path="res://images/lightbulb.png" type="Texture" id=5]
 [ext_resource path="res://images/light.png" type="Texture" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
@@ -33,15 +33,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="light" type="Light2D" parent="."]
-position = Vector2( 326.258, 150.687 )
-texture = ExtResource( 6 )
-shadow_enabled = true
-
-[node name="sprite" type="Sprite" parent="light"]
-scale = Vector2( 0.349652, 0.349652 )
-texture = ExtResource( 5 )
 
 [node name="menu_background" type="TextureRect" parent="."]
 margin_right = 720.0
@@ -105,4 +96,14 @@ text = "Options Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="lightbulb" type="Sprite" parent="."]
+position = Vector2( 239.652, 141.653 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+
+[node name="light" type="Light2D" parent="lightbulb"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+shadow_enabled = true
 [connection signal="pressed" from="options" to="." method="_on_options_pressed"]
