@@ -4,7 +4,7 @@
 [ext_resource path="res://menus/main_menu/options_gear.png" type="Texture" id=2]
 [ext_resource path="res://images/menu_background.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PermanentMarker_72.tres" type="DynamicFont" id=4]
-[ext_resource path="res://images/lightbulb.png" type="Texture" id=5]
+[ext_resource path="res://images/light_on.png" type="Texture" id=5]
 [ext_resource path="res://images/light.png" type="Texture" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
@@ -60,10 +60,11 @@ __meta__ = {
 [node name="options_gear" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -72.0
+margin_left = -54.0
 margin_top = 8.0
-margin_right = -8.0
-margin_bottom = 64.0
+margin_right = 10.0001
+margin_bottom = 72.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,23 +88,20 @@ occluder = SubResource( 5 )
 [node name="LightOccluder2_6" type="LightOccluder2D" parent="."]
 occluder = SubResource( 6 )
 
-[node name="options" type="Button" parent="."]
-margin_left = 323.634
-margin_top = 510.923
-margin_right = 426.634
-margin_bottom = 530.923
-text = "Options Menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="lightbulb" type="Sprite" parent="."]
 position = Vector2( 239.652, 141.653 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 5 )
 
 [node name="light" type="Light2D" parent="lightbulb"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 shadow_enabled = true
-[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+
+[node name="new game" type="Button" parent="."]
+margin_left = 310.0
+margin_top = 354.0
+margin_right = 392.0
+margin_bottom = 397.0
+text = "New Game"
+[connection signal="pressed" from="options_gear" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="new game" to="." method="_on_new_game_pressed"]

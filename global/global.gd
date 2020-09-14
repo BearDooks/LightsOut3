@@ -4,6 +4,7 @@ extends Node
 const game_version = 2.0
 
 ### Variables ###
+var game_type
 
 # Dictionary used to keep track of game stats
 var stats = {
@@ -16,6 +17,9 @@ var stats = {
 func _ready():
 	load_game()
 	print(stats)
+
+func set_game_type(type):
+	game_type = type
 
 # Function to save the game to the local storage
 #TODO: Fix it so there is a tag if this is the web export if we go down that path
