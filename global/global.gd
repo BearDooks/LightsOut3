@@ -1,7 +1,7 @@
 extends Node
 
 ### Constants ###
-const game_version = 2.0
+const game_version = 1.3
 
 ### Variables ###
 var game_type
