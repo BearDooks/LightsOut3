@@ -51,7 +51,7 @@ func _load_lights():
 		light.name = str("Light",row_num,col_num)
 		light.x_cord = row_num
 		light.y_cord = col_num
-		light.position = Vector2((col_width * col_num)-(col_width/2),(top_limit * row_num) + top_limit)
+		light.rect_position = Vector2((col_width * col_num)-(col_width/2),(top_limit * row_num) + top_limit)
 		lights_node.add_child(light)
 		light_array.append(str(row_num,col_num))
 		if (col_num < grid_length):

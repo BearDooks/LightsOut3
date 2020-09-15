@@ -5,6 +5,8 @@
 [ext_resource path="res://images/light.png" type="Texture" id=3]
 
 [node name="light" type="TextureButton"]
+margin_right = 64.0
+margin_bottom = 64.0
 texture_normal = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -13,6 +15,7 @@ __meta__ = {
 
 [node name="light_glow" type="Light2D" parent="."]
 visible = false
+position = Vector2( 32, 32 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 shadow_enabled = true
