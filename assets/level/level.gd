@@ -44,7 +44,7 @@ func _load_lights():
 	var loop_run = 1
 	var row_num = 1
 	var col_num = 1
-	var col_width = (x_limit / grid_length)
+	var col_width = (x_limit / grid_length) - 32 # need to remove 32 to fix the placment issue of non center
 
 	while(loop_run <= num_lights):
 		var light = light_asset.instance()
