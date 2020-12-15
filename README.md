@@ -7,7 +7,7 @@ LightsOut! is a mobile puzzle game for android that I released years ago. I am c
 * Fork the repo and download local to your machine
 * Open the **project.godot** file with [Godot 3.X](https://godotengine.org/)
 
-## Contributing 
+## Contributing  :memo:
 
 * Fork the repo and work out of your own branch
 * When done please create a pull request
