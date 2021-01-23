@@ -8,9 +8,74 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "HTTPRequest",
+"class": "FirebaseAuth",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/auth/auth.gd"
+}, {
+"base": "Control",
+"class": "FirebaseContainer",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/containers/container.gd"
+}, {
+"base": "Node",
+"class": "FirebaseDatabase",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/database/database.gd"
+}, {
+"base": "Node",
+"class": "FirebaseDatabaseReference",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/database/reference.gd"
+}, {
+"base": "Node",
+"class": "FirebaseDatabaseStore",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/database/database_store.gd"
+}, {
+"base": "Node",
+"class": "FirebaseFirestore",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/firestore/firestore.gd"
+}, {
+"base": "Resource",
+"class": "FirebaseResource",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/database/resource.gd"
+}, {
+"base": "HTTPRequest",
+"class": "FirebaseStorage",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/storage/storage.gd"
+}, {
+"base": "Reference",
+"class": "FirebaseUserData",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/auth/user_data.gd"
+}, {
+"base": "Node",
+"class": "FirestoreCollection",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/firestore/firestore_collection.gd"
+}, {
+"base": "Node",
+"class": "FirestoreDocument",
+"language": "GDScript",
+"path": "res://addons/godot-firebase/firestore/firestore_document.gd"
+} ]
 _global_script_class_icons={
-
+"FirebaseAuth": "",
+"FirebaseContainer": "",
+"FirebaseDatabase": "",
+"FirebaseDatabaseReference": "",
+"FirebaseDatabaseStore": "",
+"FirebaseFirestore": "",
+"FirebaseResource": "",
+"FirebaseStorage": "",
+"FirebaseUserData": "",
+"FirestoreCollection": "",
+"FirestoreDocument": ""
 }
 
 [application]
@@ -34,6 +99,19 @@ window/size/test_height=768
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
+
+[firebase]
+
+environment_variables/apiKey="AIzaSyA-mpbwXZXVgxn4BH5ns4w2cLxYlkJ0UYE"
+environment_variables/authDomain="lightsoutgodotgame.firebaseapp.com"
+environment_variables/databaseURL="https://lightsoutgodotgame-default-rtdb.firebaseio.com/"
+environment_variables/projectId="lightsoutgodotgame"
+environment_variables/storageBucket="lightsoutgodotgame.appspot.com"
+environment_variables/messagingSenderId="73451826989"
+environment_variables/appId="1:73451826989:web:167177ee66f005eab9eda4"
+environment_variables/measurementId=""
+environment_variables/clientId=""
+environment_variables/clientSecret=""
 
 [input]
 
