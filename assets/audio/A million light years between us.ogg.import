@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/A million light years between us.ogg-b58e1ce0c3b9d41b2c5a9dfcc6430afd.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/A million light years between us.ogg"
+dest_files=[ "res://.import/A million light years between us.ogg-b58e1ce0c3b9d41b2c5a9dfcc6430afd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
