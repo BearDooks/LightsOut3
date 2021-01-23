@@ -1,34 +1,34 @@
 extends Node
 
 ### Constants ###
-const game_version = 1.3
+const game_version : float = 1.3
 
 ### Variables ###
 var game_type
 
 # Dictionary used to keep track of game stats
-var stats = {
+var stats : Dictionary = {
 
 }
 
 ### Functions ###
 
 # Ready function called when the game is loaded
-func _ready():
+func _ready() -> void:
 	load_game()
 	print(stats)
 
-func set_game_type(type):
+func set_game_type(type) -> void:
 	game_type = type
 
 # Function to save the game to the local storage
 #TODO: Fix it so there is a tag if this is the web export if we go down that path
-func save_game():
+func save_game() -> void:
 	pass
 	# Check for issues opening the file
 	# If there is an issue break from the function
 	var game_file = File.new()
-	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.WRITE, "ThisPassWordIsTheBest") != 0:
+	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.WRITE, OS.get_unique_id()) != 0:
 		print("There was an error opening the save game file")
 		return
 	
@@ -39,7 +39,7 @@ func save_game():
 	print("The game has been saved successfully")
 
 # Function to load the game back into memory for the user
-func load_game():
+func load_game() -> void:
 	# Check if the game file exists
 	# If not break from the function
 	var game_file = File.new()
@@ -48,7 +48,7 @@ func load_game():
 		return
 	
 	# Check for issues opening the file
-	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.READ, "ThisPassWordIsTheBest") != 0:
+	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.READ, OS.get_unique_id()) != 0:
 		print("There was an error opening the save game file")
 		return
 	
