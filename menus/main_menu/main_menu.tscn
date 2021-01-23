@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/main_menu/options_gear.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/PermanentMarker_72.tres" type="DynamicFont" id=4]
 [ext_resource path="res://images/light_on.png" type="Texture" id=5]
 [ext_resource path="res://images/light.png" type="Texture" id=6]
+[ext_resource path="res://assets/buttons/normal_button.tscn" type="PackedScene" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 186.725, 191, 197.579, 158.908, 194.747, 153.717, 185.781, 151.357, 180.589, 164.1, 172.094, 192.416, 174.454, 202.798, 183.893, 205.63, 198.051, 202.798, 215.041, 202.326, 215.513, 194.304, 198.995, 190.056 )
@@ -26,8 +27,8 @@ polygon = PoolVector2Array( 457.875, 169, 456.5, 176.375, 455.625, 183.875, 456.
 polygon = PoolVector2Array( 530.189, 199.649, 530.857, 202.545, 533.307, 204.549, 536.871, 204.772, 539.766, 200.763, 539.766, 196.308, 534.866, 194.526, 532.193, 195.417 )
 
 [node name="main_menu" type="Control"]
-margin_right = 720.0
-margin_bottom = 1280.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 720, 1280 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -43,65 +44,114 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="title" type="RichTextLabel" parent="."]
+[node name="container" type="VBoxContainer" parent="."]
 anchor_right = 1.0
-margin_top = 125.0
-margin_right = 6.10352e-05
-margin_bottom = 235.0
-mouse_filter = 1
-custom_fonts/normal_font = ExtResource( 4 )
-bbcode_enabled = true
-bbcode_text = "[center]LightsOut![/center]"
-text = "LightsOut!"
+anchor_bottom = 1.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="options_gear" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -54.0
-margin_top = 8.0
-margin_right = 10.0001
-margin_bottom = 72.0
-rect_scale = Vector2( 0.7, 0.7 )
+[node name="head" type="VBoxContainer" parent="container"]
+margin_right = 64.0
+margin_bottom = 64.0
+size_flags_horizontal = 0
+
+[node name="options_gear" type="TextureButton" parent="container/head"]
+margin_right = 64.0
+margin_bottom = 64.0
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LightOccluder_1" type="LightOccluder2D" parent="."]
+[node name="top" type="VBoxContainer" parent="container"]
+margin_top = 68.0
+margin_right = 720.0
+margin_bottom = 469.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="title" type="RichTextLabel" parent="container/top"]
+margin_top = 148.0
+margin_right = 720.0
+margin_bottom = 252.0
+mouse_filter = 1
+size_flags_horizontal = 3
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]LightsOut![/center]"
+text = "LightsOut!"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LightOccluder_1" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 1 )
 
-[node name="LightOccluder2_2" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2_2" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 2 )
 
-[node name="LightOccluder2_3" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2_3" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 3 )
 
-[node name="LightOccluder2_4" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2_4" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 4 )
 
-[node name="LightOccluder2_5" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2_5" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 5 )
 
-[node name="LightOccluder2_6" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2_6" type="LightOccluder2D" parent="container/top"]
+position = Vector2( 0, 25 )
 occluder = SubResource( 6 )
 
-[node name="lightbulb" type="Sprite" parent="."]
-position = Vector2( 239.652, 141.653 )
+[node name="lightbulb" type="Sprite" parent="container/top"]
+position = Vector2( 244.652, 157 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 5 )
 
-[node name="light" type="Light2D" parent="lightbulb"]
+[node name="light" type="Light2D" parent="container/top/lightbulb"]
+position = Vector2( 0, -5.71432 )
 texture = ExtResource( 6 )
 shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="new game" type="Button" parent="."]
-margin_left = 310.0
-margin_top = 354.0
-margin_right = 392.0
-margin_bottom = 397.0
-text = "New Game"
-[connection signal="pressed" from="options_gear" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="new game" to="." method="_on_new_game_pressed"]
+[node name="middle" type="VBoxContainer" parent="container"]
+margin_top = 473.0
+margin_right = 720.0
+margin_bottom = 874.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="container/middle"]
+margin_top = 178.0
+margin_right = 720.0
+margin_bottom = 223.0
+alignment = 1
+
+[node name="new game" parent="container/middle/HBoxContainer" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 265.0
+margin_top = 0.0
+margin_right = 455.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
+label = "New Game"
+
+[node name="bottom" type="VBoxContainer" parent="container"]
+margin_top = 878.0
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_vertical = 3
+alignment = 1
+[connection signal="pressed" from="container/head/options_gear" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="container/middle/HBoxContainer/new game" to="." method="_on_new_game_pressed"]
