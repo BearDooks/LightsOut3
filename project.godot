@@ -35,6 +35,19 @@ window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
 
+[firebase]
+
+environment_variables/apiKey="AIzaSyA-mpbwXZXVgxn4BH5ns4w2cLxYlkJ0UYE"
+environment_variables/authDomain="lightsoutgodotgame.firebaseapp.com"
+environment_variables/databaseURL="https://lightsoutgodotgame-default-rtdb.firebaseio.com/"
+environment_variables/projectId="lightsoutgodotgame"
+environment_variables/storageBucket="lightsoutgodotgame.appspot.com"
+environment_variables/messagingSenderId="73451826989"
+environment_variables/appId="1:73451826989:web:167177ee66f005eab9eda4"
+environment_variables/measurementId=""
+environment_variables/clientId=""
+environment_variables/clientSecret=""
+
 [input]
 
 BUTTON_LEFT={

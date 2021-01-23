@@ -28,7 +28,7 @@ func save_game():
 	# Check for issues opening the file
 	# If there is an issue break from the function
 	var game_file = File.new()
-	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.WRITE, "ThisPassWordIsTheBest") != 0:
+	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.WRITE, OS.get_unique_id()) != 0:
 		print("There was an error opening the save game file")
 		return
 	
@@ -48,7 +48,7 @@ func load_game():
 		return
 	
 	# Check for issues opening the file
-	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.READ, "ThisPassWordIsTheBest") != 0:
+	if game_file.open_encrypted_with_pass("user://LightsOutData.sav", File.READ, OS.get_unique_id()) != 0:
 		print("There was an error opening the save game file")
 		return
 	
