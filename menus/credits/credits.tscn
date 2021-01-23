@@ -53,18 +53,18 @@ label = "Options"
 [node name="top" type="VBoxContainer" parent="container"]
 margin_top = 49.0
 margin_right = 720.0
-margin_bottom = 456.0
+margin_bottom = 452.0
 size_flags_vertical = 3
 
 [node name="middle" type="VBoxContainer" parent="container"]
-margin_top = 460.0
+margin_top = 456.0
 margin_right = 720.0
-margin_bottom = 868.0
+margin_bottom = 872.0
 size_flags_vertical = 3
 
 [node name="credits" type="RichTextLabel" parent="container/middle"]
 margin_right = 720.0
-margin_bottom = 338.0
+margin_bottom = 416.0
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]
@@ -79,6 +79,9 @@ https://soundcloud.com/alexandr-zhelanov
 Level Theme: 'Enchanted Tiki 86'
 http://cynicmusic.com/
 
+Godot Firebase Plugin: GodotNuts
+https://github.com/GodotNuts
+
 [/center]"
 text = "
 Code and Design: Chuck Lindblom
@@ -92,6 +95,9 @@ https://soundcloud.com/alexandr-zhelanov
 Level Theme: 'Enchanted Tiki 86'
 http://cynicmusic.com/
 
+Godot Firebase Plugin: GodotNuts
+https://github.com/GodotNuts
+
 "
 fit_content_height = true
 __meta__ = {
@@ -99,7 +105,7 @@ __meta__ = {
 }
 
 [node name="bottom" type="VBoxContainer" parent="container"]
-margin_top = 872.0
+margin_top = 876.0
 margin_right = 720.0
 margin_bottom = 1280.0
 size_flags_vertical = 3
