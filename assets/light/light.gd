@@ -1,31 +1,31 @@
 extends TextureButton
 
 # Connections
-var level_controller
-onready var light_glow = get_node("light_glow")
+var level_controller : Node
+onready var light_glow : Node = get_node("light_glow")
 
 # Variables
-var light_state = 'off'
-var light_on_sprite = load('res://images/light_on.png')
-var light_off_sprite = load('res://images/light_off.png')
-var x_cord = 0
-var y_cord = 0
+var light_on : bool = false
+var light_on_sprite : Texture = load('res://images/light_on.png')
+var light_off_sprite : Texture = load('res://images/light_off.png')
+var x_cord : int = 0
+var y_cord : int = 0
 
-func _ready():
+func _ready() -> void:
 	set_process_input(true)
 	level_controller = get_node("/root/level")
 
-func toggle_light():
-	if light_state == 'off':
-		light_state = 'on'
+func toggle_light() -> void:
+	if light_on == false:
+		light_on = true
 		self.texture_normal = light_on_sprite
 		light_glow.visible = true
 		
 	else:
-		light_state = 'off'
+		light_on = false
 		self.texture_normal = light_off_sprite
 		light_glow.visible = false
 
 
-func _on_light_pressed():
+func _on_light_pressed() -> void:
 	toggle_light()
