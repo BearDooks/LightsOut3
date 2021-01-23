@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://menus/main_menu/options_gear.png" type="Texture" id=2]
 [ext_resource path="res://images/menu_background.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PermanentMarker_72.tres" type="DynamicFont" id=4]
 [ext_resource path="res://images/light_on.png" type="Texture" id=5]
@@ -52,30 +51,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="head" type="VBoxContainer" parent="container"]
-margin_right = 64.0
-margin_bottom = 64.0
-size_flags_horizontal = 0
-
-[node name="options_gear" type="TextureButton" parent="container/head"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture_normal = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="top" type="VBoxContainer" parent="container"]
-margin_top = 68.0
 margin_right = 720.0
-margin_bottom = 469.0
+margin_bottom = 424.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="title" type="RichTextLabel" parent="container/top"]
-margin_top = 148.0
+margin_top = 160.0
 margin_right = 720.0
-margin_bottom = 252.0
+margin_bottom = 264.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_fonts/normal_font = ExtResource( 4 )
@@ -88,31 +73,31 @@ __meta__ = {
 }
 
 [node name="LightOccluder_1" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 1 )
 
 [node name="LightOccluder2_2" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 2 )
 
 [node name="LightOccluder2_3" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2_4" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 4 )
 
 [node name="LightOccluder2_5" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 5 )
 
 [node name="LightOccluder2_6" type="LightOccluder2D" parent="container/top"]
-position = Vector2( 0, 25 )
+position = Vector2( 0, 35 )
 occluder = SubResource( 6 )
 
 [node name="lightbulb" type="Sprite" parent="container/top"]
-position = Vector2( 244.652, 157 )
+position = Vector2( 243.652, 174 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 5 )
 
@@ -125,33 +110,47 @@ __meta__ = {
 }
 
 [node name="middle" type="VBoxContainer" parent="container"]
-margin_top = 473.0
+margin_top = 428.0
 margin_right = 720.0
-margin_bottom = 874.0
+margin_bottom = 852.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="container/middle"]
-margin_top = 178.0
+margin_top = 165.0
 margin_right = 720.0
-margin_bottom = 223.0
+margin_bottom = 259.0
 alignment = 1
 
-[node name="new game" parent="container/middle/HBoxContainer" instance=ExtResource( 7 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="container/middle/HBoxContainer"]
+margin_left = 265.0
+margin_right = 455.0
+margin_bottom = 94.0
+
+[node name="new game" parent="container/middle/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 265.0
+margin_left = 0.0
 margin_top = 0.0
-margin_right = 455.0
+margin_right = 190.0
 margin_bottom = 45.0
 size_flags_horizontal = 0
 label = "New Game"
 
+[node name="options" parent="container/middle/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 49.0
+margin_right = 190.0
+margin_bottom = 94.0
+label = "Options"
+
 [node name="bottom" type="VBoxContainer" parent="container"]
-margin_top = 878.0
+margin_top = 856.0
 margin_right = 720.0
 margin_bottom = 1280.0
 size_flags_vertical = 3
 alignment = 1
-[connection signal="pressed" from="container/head/options_gear" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="container/middle/HBoxContainer/new game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="container/middle/HBoxContainer/VBoxContainer/new game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="container/middle/HBoxContainer/VBoxContainer/options" to="." method="_on_options_pressed"]

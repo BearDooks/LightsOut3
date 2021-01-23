@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/options_menu/options_menu.gd" type="Script" id=1]
-[ext_resource path="res://images/back_button.png" type="Texture" id=2]
+[ext_resource path="res://assets/buttons/normal_button.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -24,26 +24,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="back_button" type="TextureButton" parent="."]
-margin_left = 101.811
-margin_top = 101.622
-margin_right = 595.811
-margin_bottom = 595.622
-rect_rotation = 180.0
-rect_scale = Vector2( 0.2, 0.2 )
-texture_normal = ExtResource( 2 )
+[node name="container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="credits" type="Button" parent="."]
-margin_left = 287.0
-margin_top = 254.0
-margin_right = 400.0
-margin_bottom = 290.0
-text = "Credits"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[node name="head" type="VBoxContainer" parent="container"]
+margin_right = 720.0
+margin_bottom = 45.0
+alignment = 1
+
+[node name="main_menu" parent="container/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 190.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
+label = "Main Menu"
+
+[node name="top" type="VBoxContainer" parent="container"]
+margin_top = 49.0
+margin_right = 720.0
+margin_bottom = 456.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="middle" type="VBoxContainer" parent="container"]
+margin_top = 460.0
+margin_right = 720.0
+margin_bottom = 868.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="container/middle"]
+margin_top = 181.0
+margin_right = 720.0
+margin_bottom = 226.0
+alignment = 1
+
+[node name="credits" parent="container/middle/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 265.0
+margin_top = 0.0
+margin_right = 455.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
+label = "Credits"
+
+[node name="bottom" type="VBoxContainer" parent="container"]
+margin_top = 872.0
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_vertical = 3
+alignment = 1
+[connection signal="pressed" from="container/head/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="container/middle/HBoxContainer/credits" to="." method="_on_credits_pressed"]
