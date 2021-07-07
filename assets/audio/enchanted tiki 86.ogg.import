@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/enchanted tiki 86.ogg-4813b4187f4c3691a81c12a83e876c47.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/enchanted tiki 86.ogg"
+dest_files=[ "res://.import/enchanted tiki 86.ogg-4813b4187f4c3691a81c12a83e876c47.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

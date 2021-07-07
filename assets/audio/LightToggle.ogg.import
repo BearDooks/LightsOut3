@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LightToggle.ogg-25e331f9e03efcd5b0d1611f86ca4f18.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/LightToggle.ogg"
+dest_files=[ "res://.import/LightToggle.ogg-25e331f9e03efcd5b0d1611f86ca4f18.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
